@@ -54,6 +54,13 @@ function teleportworld()
     end
 end
 
+local Info = Window:MakeTab({
+	Name = "Info",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
 local AutoFarm = Window:MakeTab({
 	Name = "Auto Farm",
 	Icon = "rbxassetid://4483345998",
@@ -71,6 +78,8 @@ local Teleport = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Info:AddLabel("- Made By Ngx_Hieeus")
+Info:AddLabel("- Version : [ BETA ]")
 
 AutoFarm:AddToggle({
 	Name = "Auto Tap",
