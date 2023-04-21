@@ -1,13 +1,18 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "😈 Clicker Madness! - Kers Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "😈 Clicker Madness! - NamKy Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 _G.AutoTap = false
+
 _G.AutoRebirth = false
 _G.SelectReb = 1
+
 _G.AutoEgg = true
 _G.SelectEgg = 'basic'
+
 _G.SelectWorlds = 'Lava'
+
+_G.AutoFarmBoss = true
 
 function AutoClick()
     while _G.AutoTap == true do
@@ -54,6 +59,25 @@ function teleportworld()
     end
 end
 
+function Sprit()
+	local plr = game.Players.LocalPlayer
+	plr.Character.Humanoid.WalkSpeed = 120
+end
+
+function AutoBoss()
+	while _G.AutoFarmBoss == true do
+		local plr = game.Players.LocalPlayer.Character
+		local args = {
+			[1] = "Zombie"
+		}
+		local zombie = game.Workspace.ScriptObjects.Zombie
+		zombie.HumanoidRootPart.Anchored = true
+		plr.HumanoidRootPart.CFrame= zombie.HumanoidRootPart.CFrame
+		game:GetService("ReplicatedStorage"):WaitForChild("Aero"):WaitForChild("AeroRemoteServices"):WaitForChild("CursorCannonService"):WaitForChild("FireBoss"):FireServer(unpack(args))
+		wait(0.5)
+	end
+end
+
 local Info = Window:MakeTab({
 	Name = "Info",
 	Icon = "rbxassetid://4483345998",
@@ -78,8 +102,17 @@ local Teleport = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Misc = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
 Info:AddLabel("- Made By Ngx_Hieeus")
-Info:AddLabel("- Version : [ BETA ]")
+Info:AddLabel("- Version : 1.1 [ BETA ]")
+Info:AddLabel("- Error And How To Fix -")
+Info:AddParagraph("Error : Not Loaded","Fix : Wait Zombie Boss Spawn And Try Again")
 
 AutoFarm:AddToggle({
 	Name = "Auto Tap",
@@ -105,6 +138,15 @@ AutoFarm:AddDropdown({
 	Options = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000},
 	Callback = function(Value)
         _G.SelectReb = Value
+	end    
+})
+
+AutoFarm:AddToggle({
+	Name = "Auto Boss",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoFarmBoss = Value
+        AutoBoss()
 	end    
 })
 
@@ -143,6 +185,11 @@ Teleport:AddButton({
   	end    
 })
 
-
+Misc:AddButton({
+	Name = "Run Faster",
+	Callback = function()
+      		Sprit()
+  	end    
+})
 
 OrionLib:Init()
