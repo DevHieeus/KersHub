@@ -79,7 +79,7 @@
 
 	function JumpHigh()
 		local plr = game.Players.LocalPlayer
-		plr.Character.Humanoid.Jump = _G.Jump
+		plr.Character.Humanoid.JumpPower = _G.Jump
 	end
 
 	function AutoBoss()
