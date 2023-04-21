@@ -74,7 +74,7 @@ function AutoBoss()
 		zombie.HumanoidRootPart.Anchored = true
 		plr.HumanoidRootPart.CFrame= zombie.HumanoidRootPart.CFrame
 		game:GetService("ReplicatedStorage"):WaitForChild("Aero"):WaitForChild("AeroRemoteServices"):WaitForChild("CursorCannonService"):WaitForChild("FireBoss"):FireServer(unpack(args))
-		wait(0.5)
+		wait(0)
 	end
 end
 
