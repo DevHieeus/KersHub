@@ -1,6 +1,13 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Tower of Hell - Kers Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+OrionLib:MakeNotification({
+	Name = "Notification - By Admin",
+	Content = "Correct Key !!!, Hub Is Loading...",
+	Image = "rbxassetid://4483345998",
+	Time = 30
+})
+
 _G.JumpP = 20
 _G.WalkS = 20
 _G.AutoFarmCoins = false
