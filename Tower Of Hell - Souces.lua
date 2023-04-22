@@ -53,7 +53,7 @@ Main:AddParagraph("ENTER DELAY", "RECOMMEND : 30S TO AVOID BAN")
 Main:AddTextbox({
 	Name = "Delay",
 	Default = 30,
-	TextDisappear = true,
+	TextDisappear = false,
 	Callback = function(Value)
 		_G.Delay = Value
 	end	  
