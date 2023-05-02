@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = 'Murder Mystery 2 - Kers Hub', HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = 'MM2 Egg Hunt [BETA] - Kers Hub', HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 local plr = game.Players.LocalPlayer.Character
@@ -54,7 +54,7 @@ end
 function CheckTotalEgg()
     OrionLib:MakeNotification({
         Name = "Check Total Egg !",
-        Content = "Your Total Egg:" .. tostring( _G.TotalEgg),
+        Content = "Total Egg : " .. tostring( _G.TotalEgg),
         Image = "rbxassetid://4483345998",
         Time = 5
     })
@@ -95,7 +95,7 @@ Main:AddToggle({
 Main:AddButton({
 	Name = "Check Total Egg Collected",
 	Callback = function()
-		CheckTotalEgg()
+			CheckTotalEgg()
 	end    
 })
 
