@@ -62,13 +62,13 @@ end
 
 
 local Main = Window:MakeTab({
-	Name = "Info",
+	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 Main:AddLabel('You should use this hub in clone account!')
-Main:Addlabel('DM me if you find error (Hieeus#8507)')
+Main:AddLabel('DM me if you find error (Hieeus#8507)')
 
 Main:AddSlider({
 	Name = "Set Delay",
