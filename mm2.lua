@@ -95,7 +95,7 @@ Main:AddToggle({
 Main:AddButton({
 	Name = "Check Total Egg Collected",
 	Callback = function()
-			CheckTotalEgg()
+		CheckTotalEgg()
 	end    
 })
 
